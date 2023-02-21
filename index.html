@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+  <title>crud</title>
+</head>
+
+<body>
+  <h1>Crud Operation</h1>
+  <div class="form">
+    <div class="form-group">
+      <div class="form-group col-md-6">
+        <label for="name">ProductName</label>
+        <input type="text" class="form-control" id="name">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="file">Upload Image</label>
+        <input type="file" id="thumbnail">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="price">Price</label>
+        <input type="text" class="form-control" id="price">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="Description">Description</label>
+      </div>
+      <div class="form-group col-md-6">
+        <textarea name="" class="form-control" id="description" cols="30" rows="5"></textarea>
+      </div>
+    </div>
+    <div id="msg"></div>
+    <button onclick="manageData()" class="btn btn-primary btn">Add Product</button>
+  </div>
+  
+  <h1 class="list">List</h1>
+ 
+  <div class="dropdown">
+    <label class="for-drop">Use this dropdown For sorting purpose:</label>
+    <select name="dropdown1" id="sortby" class="drop" onchange="sorting()">
+      <option value="Sorting" selected>Sorting</option>
+      <option value="Name">Name</option>
+      <option value="Price">Price</option>
+      <option value="Id">Id</option>
+    </select>
+  </div><br>
+  <div class="container">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">ProductID</td>
+        <th scope="col">ProductName</td>
+        <th scope="col">Image</td>
+        <th scope="col">Price</td>
+        <th scope="col">Description</td>
+        <th scope="col">Action</td>
+      </tr>
+    </thead>
+    <tbody id="root">
+
+    </tbody>
+  </table>
+  </div>
+  <script src="main.js"></script>
+
+</body>
+
+</html>
